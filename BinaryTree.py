@@ -20,7 +20,7 @@ class BinaryTree:
         l, r = 0, 1
         while r < len(items):
             if items[l].left is None:
-                items[l].l = items[r]
+                items[l].left = items[r]
             elif items[l].right is None:
                 items[l].right = items[r]
             else:
