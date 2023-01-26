@@ -1,7 +1,7 @@
 from TreeNode import TreeNode
 from BinaryTree import BinaryTree
 
-def find_common_parent(root, i1, i2) -> TreeNode:
+def find_common_parent(root, i1, i2):
     parents = {}
 
     def dfs(node, arr):
@@ -27,7 +27,7 @@ def find_common_parent(root, i1, i2) -> TreeNode:
     # Find most recent  common parent
     for i in range(len(parents[i1]) -1, -1, -1):
         if parents[i1][i] in parents[i2]:
-            return parents[i1][i]
+            return parents[i1][i].val
             
     # Node(s) either do not exist in tree or are root node
     return None
