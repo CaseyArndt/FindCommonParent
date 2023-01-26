@@ -23,11 +23,15 @@ def find_common_parent(root, i1, i2):
 
     # Populate parents dictionary with ancestor nodes
     dfs(root, [])
+
+    # i1 or i2 not in tree
+    if i1 not in parents or i2 not in parents:
+        return None
     
     # Find most recent  common parent
     for i in range(len(parents[i1]) -1, -1, -1):
         if parents[i1][i] in parents[i2]:
             return parents[i1][i].val
             
-    # Node(s) either do not exist in tree or are root node
+    # Nodes include root node
     return None
