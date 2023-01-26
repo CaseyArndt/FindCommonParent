@@ -39,3 +39,24 @@ class BinaryTree:
             return root
 
         return self.dfs(root.left, val) or self.dfs(root.right, val)
+
+
+    def to_list(self):
+        res = []
+
+        if self.root is None:
+            return res
+        
+        queue = [self.root]
+
+        while len(queue) > 0:
+            curr = queue.pop(0)
+            res.append(curr.val)
+
+            if curr.left is not None:
+                queue.append(curr.left)
+            
+            if curr.right is not None:
+                queue.append(curr.right)
+
+        return res
