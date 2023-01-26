@@ -26,7 +26,6 @@ class BinaryTree:
             else:
                 l += 1
                 continue
-
             r += 1
 
         return items[0]
@@ -41,7 +40,7 @@ class BinaryTree:
         return self.dfs(root.left, val) or self.dfs(root.right, val)
 
 
-    def to_list(self):
+    def to_list(self) -> list:
         res = []
 
         if self.root is None:
